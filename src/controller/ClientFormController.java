@@ -33,6 +33,8 @@ public class ClientFormController extends Thread{
         }catch (IOException e){
             e.printStackTrace();
         }
+
+        lblUserName.setText(LoginFormController.userName);
     }
 
     @Override
