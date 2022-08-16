@@ -25,5 +25,33 @@ public class ClientHandler extends Thread{
         }
     }
 
+    public void run(){
+        try {
+            String message;
+            while ((message = bufferedReader.readLine()) != null) {
+                if (message.equalsIgnoreCase("exit")) {
+                    break;
+                }
+                for (ClientHandler clientHandler : clientHandlers) {
+                    clientHandler.printWriter.println(message);
+                }
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        finally {
+            try {
+                bufferedReader.close();
+                printWriter.close();
+                socket.close();
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+        }
+
+
+
+    }
 
 }
