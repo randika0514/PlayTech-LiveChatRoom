@@ -2,6 +2,7 @@ package controller;
 
 import com.jfoenix.controls.JFXTextArea;
 import javafx.event.ActionEvent;
+import javafx.geometry.NodeOrientation;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -59,6 +60,13 @@ public class ClientFormController extends Thread{
     }
 
     public void btnSendOnAction(ActionEvent actionEvent) {
-
+        String message = txtMsg.getText();
+        printWriter.println(lblUserName.getText()+" : "+txtMsg.getText());
+        txtMsg.setNodeOrientation(NodeOrientation.LEFT_TO_RIGHT);
+        txtAreaClient.appendText("Me : "+ message +"\n");
+        txtMsg.clear();
+        if (message.equalsIgnoreCase("Bye")){
+            System.exit(0);
+        }
     }
 }
