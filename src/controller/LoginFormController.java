@@ -23,7 +23,7 @@ public class LoginFormController {
         Stage stg2=new Stage();
         stg2.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/ClientForm.fxml"))));
         stg2.setResizable(false);
-        stg2.setTitle("");
+        stg2.setTitle("PlayTech Live Chat Room");
         stg2.centerOnScreen();
         stg2.show();
     }
