@@ -51,7 +51,7 @@ public class ClientFormController extends Thread{
                 }
                 System.out.println(fullMessage);
 
-                System.out.println("cmd"+cmd+"     UserName"+lblUserName.getText());
+                System.out.println("cmd"+cmd+"-----"+"UserName"+lblUserName.getText());
                 if (!cmd.equalsIgnoreCase(lblUserName.getText()+":")){
                     txtAreaClient.appendText(message+"\n");
                 }
